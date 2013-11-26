@@ -1,0 +1,10 @@
+<h2>Edit category</h2>
+
+<%= simple_form_for @category do |f|%>
+	
+	<%= f.input :name %>
+	<%= f.input :rank %>
+
+	<%= f.button :submit %>
+
+<% end %>

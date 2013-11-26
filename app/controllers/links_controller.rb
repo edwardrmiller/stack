@@ -5,12 +5,14 @@ class LinksController < ApplicationController
 
   # before EDIT UPDATE, and DESTROY, find the link
   before_action :get_link, only: [:edit, :update, :destroy]
-  
+
 
   def new
     if params[:duplicate_id].present?
       # do a duplicate of this 
-      @link = @category.links.find(params[:duplicate_id])
+      @duplicate_link = @category.links.find(params[:duplicate_id])
+      @link = @category.links.new(@duplicate_link.attributes)
+      @link = @category.links.new
     else
       # do a brand new one
       @link = @category.links.new

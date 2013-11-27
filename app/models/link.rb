@@ -7,5 +7,10 @@ class Link < ActiveRecord::Base
 	validates :name, presence: true
 	validates :url, presence: true, uniqueness: true
 
+	# ive made this nice_url up
+	def nice_url
+		# lets remove http:// and lets remove www.
+		url.gsub("http://", "").gsub("www.", "")
+	end
 
 end

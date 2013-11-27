@@ -60,7 +60,7 @@ class LinksController < ApplicationController
 
 
   def link_params
-  	params. require(:link).permit(:name, :description, :url)
+  	params.require(:link).permit(:name, :description, :url, :is_recommended)
   end
 
   def get_category
